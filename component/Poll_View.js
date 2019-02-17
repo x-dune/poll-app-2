@@ -85,7 +85,7 @@ class Poll_View extends React.Component {
                     let votes = [...this.state.votes];
                     votes[voteIndex]++;
                     this.setState({ totalVote: this.state.totalVote + 1, votes: votes, lastVotedOn: new Date() });
-                    chart.destroy();
+                    if (chart) {chart.destroy();}
                     this.renderChart(votes);
                 } else {
                     return errorHandler('500: Internal Server Error')

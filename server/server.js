@@ -37,8 +37,10 @@ nextApp.prepare()
             if (err) throw err;
             if (dev) {
                 console.log(`> ready at http://localhost:${PORT}/`);
+            } else {
+
+                console.log(`> ready at ${PORT}`);
             }
-            console.log(`> ready at ${PORT}`);
         })
     })
     .catch(ex => {

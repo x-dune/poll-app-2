@@ -82,7 +82,7 @@ class New extends React.Component {
         }
 
         for (let i = 0; i < options.length; i++) {
-            if (options[i].name.length > 256) {
+            if (options[i].length > 256) {
                 return errorHandler(`The options "${options[i].name}" has exceeded 256 characters`, 7000);
             }
         }
