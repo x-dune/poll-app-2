@@ -18,7 +18,7 @@ class Layout extends React.Component {
                     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"></link>
                     <link rel="shortcut icon" href="../static/favicon.ico" type="image/x-icon" />
                     <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-                    <title>POLL_APP_2</title>
+                    <title>Poll App</title>
                 </Head>
                 <Navbar 
                 searchQuery = {this.props.searchQuery}

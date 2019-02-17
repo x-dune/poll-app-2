@@ -35,6 +35,9 @@ nextApp.prepare()
 
         app.listen(PORT, err => {
             if (err) throw err;
+            if (dev) {
+                console.log(`> ready at http://localhost:${PORT}/`);
+            }
             console.log(`> ready at ${PORT}`);
         })
     })

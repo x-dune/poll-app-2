@@ -30,7 +30,7 @@ class Navbar extends React.Component {
                         <Link href="/">
                             <a className="brand-logo">
                                 <i className="material-icons" style={{ fontSize: "3.5rem" }}>poll</i>
-                                <span className="hide-on-small-and-down">POLL_APP_2</span>
+                                <span className="hide-on-small-and-down">Poll App</span>
                             </a>
                         </Link>
                         <a href="#" data-target="mobile-sidenav" className="sidenav-trigger"><i className="material-icons">menu</i></a>

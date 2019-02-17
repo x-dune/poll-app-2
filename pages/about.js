@@ -12,7 +12,7 @@ const About = () => {
                         {
                             [
                                 <p>
-                                    This application is a single page application that was mainly built using the MERN stack (<Link href="https://www.mongodb.com/"><a>MongoDB</a></Link>, <Link href="https://expressjs.com/"><a>Express</a></Link>, <Link href="https://reactjs.org/"><a>React</a></Link>, <Link href="https://nodejs.org/"><a>Node</a></Link>).
+                                    This application is a responsive, single page application that was mainly built using the MERN stack (<Link href="https://www.mongodb.com/"><a>MongoDB</a></Link>, <Link href="https://expressjs.com/"><a>Express</a></Link>, <Link href="https://reactjs.org/"><a>React</a></Link>, <Link href="https://nodejs.org/"><a>Node</a></Link>).
                             </p>,
                                 <p>
                                     React is rendered on the server-side using <Link href="https://nextjs.org/"><a>Next.js</a></Link>.
@@ -29,6 +29,7 @@ const About = () => {
                             ].map((elem, index) => <li key={index} style={{listStyleType: 'disc'}} className="ml-4">{elem}</li>)
                         }
                     </ul>
+                    <p className="mt-3 mr-3">Source code can be found <Link href="https://github.com/adamdune/poll_app_2"><a>here</a></Link> (GitHub).</p>
                 </div>
             </div>
         </Layout>
