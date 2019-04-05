@@ -6,7 +6,6 @@ class Navbar extends React.Component {
 
     handleSearch = (id) => {
         const title = document.getElementById(id).value;
-        console.log('router push search');
         Router.push({ pathname: '/search', query: { title: title } });
     }
 

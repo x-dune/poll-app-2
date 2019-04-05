@@ -46,7 +46,6 @@ Search.getInitialProps = async ({ query }) => {
     })
     const res = await fetch(fetchUrl);
     const data = await res.json();
-    console.log('fetch', 'search.js', fetchUrl);
     return { polls: data.polls, count: data.count, query };
 }
 

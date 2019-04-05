@@ -1,4 +1,5 @@
 import fetch from 'isomorphic-unfetch';
+import Chart from 'chart.js';
 import { pctString, colorClasses, voteString, relativeDate, genColorHexes, dateTooltipString } from '../utility';
 
 let chart;
@@ -12,7 +13,6 @@ class Poll_View extends React.Component {
 
     renderChart = (votes) => {
         const ctx = document.getElementById("chart").getContext('2d');
-        const Chart = require('chart.js');
         chart = new Chart(ctx, {
             type: 'doughnut',
             data: {
