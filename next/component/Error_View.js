@@ -10,9 +10,9 @@ const Error_View = (props) => {
     return (
         <div>
             {!props.statusCode
-                ? <h4 className="center-align">Umm...an error occurred on client</h4> : props.statusCode === 404 ?
+                ? <h4 className="center-align">Umm...an error occurred on the client-side.</h4> : props.statusCode === 404 ?
                     <Error404 /> :
-                    <h4 className="center-align">Whoops...an error <strong>{props.statusCode}</strong> occurred on the server</h4>}
+                    <h4 className="center-align">Whoops...an error <strong>{props.statusCode}</strong> occurred on the server.</h4>}
         </div>
     );
 }

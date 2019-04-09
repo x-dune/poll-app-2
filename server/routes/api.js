@@ -5,7 +5,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const router = express.Router();
 
-mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useCreateIndex: true });
+mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useCreateIndex: true, useFindAndModify: false });
 
 const db = mongoose.connection;
 
@@ -84,7 +84,6 @@ router.route('/polls')
                         console.log(err);
                         res.status(500).send(err);
                     } else {
-                        console.log(count, sortObject, req.query.sort);
                         res.json({ polls, count });
                     }
                 });
@@ -99,7 +98,6 @@ router.route('/polls')
             options: req.body.options.map(option => { return { name: option } }),
             createdOn: new Date()
         });
-        console.log('newPoll', newPoll);
         newPoll.save((err, poll) => {
             if (err) {
                 console.error(err)
@@ -130,7 +128,6 @@ router.route('/polls/:id')
                 res.status(500).send('Internal Server Error');
             }
             else {
-                console.log(data);
                 res.status(200).end();
             }
         });

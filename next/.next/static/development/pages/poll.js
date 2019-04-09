@@ -43114,9 +43114,9 @@ var Error404 = function Error404() {
 var Error_View = function Error_View(props) {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, !props.statusCode ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", {
     className: "center-align"
-  }, "Umm...an error occurred on client") : props.statusCode === 404 ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Error404, null) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", {
+  }, "Umm...an error occurred on the client-side.") : props.statusCode === 404 ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Error404, null) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", {
     className: "center-align"
-  }, "Whoops...an error ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, props.statusCode), " occurred on the server"));
+  }, "Whoops...an error ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, props.statusCode), " occurred on the server."));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Error_View);
@@ -43766,7 +43766,7 @@ function () {
             res = _context.sent;
 
             if (!(res.status === 200)) {
-              _context.next = 12;
+              _context.next = 11;
               break;
             }
 
@@ -43775,18 +43775,24 @@ function () {
 
           case 7:
             data = _context.sent;
+
+            if (!data) {
+              _context.next = 11;
+              break;
+            }
+
             data.id = id;
             return _context.abrupt("return", {
               poll: data
             });
 
-          case 12:
-            statusCode = res ? res.status : null;
+          case 11:
+            statusCode = res ? res.status !== 200 ? res.status : 404 : null;
             return _context.abrupt("return", {
               statusCode: statusCode
             });
 
-          case 14:
+          case 13:
           case "end":
             return _context.stop();
         }
@@ -43940,7 +43946,7 @@ var urlConfig =  true ? {
 
 /***/ }),
 
-/***/ 6:
+/***/ 7:
 /*!*****************************!*\
   !*** multi ./pages/poll.js ***!
   \*****************************/
@@ -43965,5 +43971,5 @@ module.exports = dll_629212d82e3cc70d4768;
 
 /***/ })
 
-},[[6,"static/runtime/webpack.js","styles"]]]));;
+},[[7,"static/runtime/webpack.js","styles"]]]));;
 //# sourceMappingURL=poll.js.map
