@@ -14,6 +14,15 @@ nextApp.prepare()
         app.use(bodyParser.json());
         app.use(bodyParser.urlencoded({ extended: true }));
 
+        if (!dev) {
+            app.use((req,res,next)=>{
+                if (req.get('x-forwarded-proto') && req.get('x-forwarded-proto') === 'http') {
+                    res.redirect('https://' + req.headers.host + req.url);
+                }
+                next();
+            });
+        }
+
         app.use('/api', require('./routes/api'));
 
         app.get('/error', (req, res) => {
